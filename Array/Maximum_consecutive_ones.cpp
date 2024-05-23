@@ -10,18 +10,17 @@ void display(int arr[],int n){
     cout<<endl;
 }
 
-void missing_element_brute_force(int arr[],int n){
-    int j=1;
-    for(int i=0;i<n;i++){
+void maximum_consicutive(int arr[],int n){
+    int count=1,max_count=0;
 
-        if(arr[i]^j!=0) {
-            while(arr[i]!=j){
-            cout<<j<<" ";
-            j++;
-            }
+    for(int i=1;i<n;i++){
+        if(arr[i]==arr[i-1]){
+            count++;
+            if(max_count<count)max_count=count;
         }
-        j++;
+        else if(arr[i]!=arr[i-1]) count=1;
     }
+    cout<<"ANS="<<max_count;
 }
 
 main(){
@@ -39,9 +38,7 @@ main(){
     cout<<"\nArray: ";
     display(arr,n);
 
-    missing_element_brute_force(arr,n);
-
-    
+    maximum_consicutive(arr,n);
 
     return 0;
 
