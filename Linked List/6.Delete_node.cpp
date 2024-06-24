@@ -10,6 +10,10 @@ class node{
             data=data1;
             next=nullptr;
         }
+        node(int data1, node* next1){
+            data=data1;
+            next=next1;
+        }
 };
 
 //Array to LL converter
@@ -68,16 +72,53 @@ node* deleteNode(node *head, int k){
     return head;
 }
 
+//function to delete node containing element
+node* remove_ele(node *head, int ele){
+    //handling edge case i.e. only one node in LL
+    if(head==nullptr) return head;
+
+    if(head->data==ele){
+        node *temp=head;
+        head=head->next;
+        delete temp;
+        cout<<"LL is empty now";
+        return head;
+    }
+
+
+    node *temp=head;
+    node *previous =nullptr;
+
+    while(temp){
+        if(temp->data==ele){
+            previous->next=previous->next->next;
+            delete temp;
+            break;
+        }
+        previous=temp;
+        temp=temp->next;
+    }
+
+    return head;
+}
+
 int main(){
     vector<int> nums={2,3,5,3,7,9};
     node* head= arr2ll(nums);
     display(head);
 
+    //remove kth node
     int k;
     cout<<"Node to delete: ";
     cin>>k;
-
     head=deleteNode(head,k);
+    display(head);
+
+    //remove an element
+    int ele;
+    cout<<"Element to remove: ";
+    cin>>ele;
+    head=remove_ele(head,ele);
     display(head);
 
     return 0;
