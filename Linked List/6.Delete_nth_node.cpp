@@ -38,22 +38,38 @@ void display(node *head){
 
 //Function to delete Kth node
 node* deleteNode(node *head, int k){
-    int count =0;
+    //handling edge case i.e. only one node in LL
+    if(head==nullptr) return head;
+
+    if(k==1){
+        node *temp=head;
+        head=head->next;
+        delete temp;
+        cout<<"LL is empty now";
+        return head;
+    }
+
+    int counter =0;
 
     node *temp=head;
-    while(count<k){
+    node *previous =nullptr;
+
+    while(temp){
+        counter++;
+        if(counter==k){
+            previous->next=previous->next->next;
+            delete temp;
+            break;
+        }
+        previous=temp;
         temp=temp->next;
-        count++;
     }
-    node *temp2=temp;
-    temp->next=temp->next->next;
-    delete temp2;
 
     return head;
 }
 
 int main(){
-    vector<int> nums={2,4,6,8,3};
+    vector<int> nums={2,3,5,3,7,9};
     node* head= arr2ll(nums);
     display(head);
 
