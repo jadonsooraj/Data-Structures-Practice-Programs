@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//defining LL node
 class node{
 
 public:
