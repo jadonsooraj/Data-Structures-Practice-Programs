@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//defining a LL node
 class node{
     public:
     int data;
@@ -43,6 +44,7 @@ void display(node* head){
     cout<<endl;
 }
 
+//function to find length of LL
 int lengthofll(node* head){
     int count=0;
     node* temp=head;

@@ -3,6 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//defining a LL node
 class node{
     public:
     int data;
