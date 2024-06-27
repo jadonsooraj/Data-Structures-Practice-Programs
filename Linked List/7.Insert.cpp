@@ -68,6 +68,7 @@ node* insert(node* head, int k, int ele){
     if(head==nullptr){
         return new node(ele);
     }
+    //insert at head
     if(k==1){
         return new node(ele,head);
     }
@@ -76,11 +77,14 @@ node* insert(node* head, int k, int ele){
     
     while(mover){
         counter++;
-        if(counter==k){
+        if(counter==k-1){
             node* temp= new node(ele);
+            temp->next=mover->next;
             mover->next=temp;
+            break;
             
         }
+        mover=mover->next;
     }
 }
 
