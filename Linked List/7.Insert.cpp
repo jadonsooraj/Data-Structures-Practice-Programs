@@ -93,17 +93,17 @@ int main(){
     node* head= arr2ll(nums);
     display(head);
 
-    // int ele;
-    // cout<<"Enter element to insert at head: ";
-    // cin>>ele;
-    // head=insert_head(head, ele);
-    // display(head);
+    int ele;
+    cout<<"Enter element to insert at head: ";
+    cin>>ele;
+    head=insert_head(head, ele);
+    display(head);
 
-    // int ele1;
-    // cout<<"Enter element to insert at tail: ";
-    // cin>>ele1;
-    // head=insert_tail(head, ele1);
-    // display(head);
+    int ele1;
+    cout<<"Enter element to insert at tail: ";
+    cin>>ele1;
+    head=insert_tail(head, ele1);
+    display(head);
 
     int ele2,k;
     cout<<"Enter position to insert: ";
