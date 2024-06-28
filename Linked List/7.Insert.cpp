@@ -88,6 +88,10 @@ node* insert(node* head, int k, int ele){
     }
 }
 
+//Insert before a "Val"
+
+//write a function
+
 int main(){
     vector<int> nums={2,3,5,3,7,9};
     node* head= arr2ll(nums);
