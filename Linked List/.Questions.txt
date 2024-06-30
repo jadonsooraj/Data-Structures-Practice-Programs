@@ -1,0 +1,14 @@
+1. Declare a LL using Array
+2. Length of LL
+3. Search in LL
+4. Delete operations:
+    (a) Delete head
+    (b) Delete tail
+    (c) delete kth node
+    (d) delete node conataining 'ele' 
+5. Insert in LL:
+    (a) Insert head
+    (b) Insert tail
+    (c) Insert at kth node
+    (d) Insert node before 'ele'
+6. Odd Even LL

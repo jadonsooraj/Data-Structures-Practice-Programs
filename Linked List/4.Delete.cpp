@@ -1,43 +1,70 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//defining a LL node
 class node{
-    public:
-        int data;
-        node *next;
-    public:
-        node(int data1){
-            data=data1;
-            next=nullptr;
-        }
-        node(int data1, node* next1){
-            data=data1;
-            next=next1;
-        }
+
+public:
+    int data;
+    node *next;
+
+public:
+    node(int data1){
+        data=data1;
+        next=nullptr;
+    }
 };
 
-//Array to LL converter
+//function to convert array to LL
 node* arr2ll(vector<int> &nums){
     node *head= new node(nums[0]);
-    node *tail= head;
+    node *last= head;
 
-    for(int i=1; i<nums.size(); i++){
+    for(int i=1; i<nums.size();i++){
         node *temp= new node(nums[i]);
-        tail->next=temp;
-        tail=temp;
+        last->next=temp;
+        last=temp;
     }
     return head;
 }
 
-//display function
+//Display function
 void display(node *head){
     node *temp=head;
-
     while(temp){
         cout<<temp->data<<" ";
         temp=temp->next;
     }
     cout<<endl;
+}
+
+//delete head function
+node* delete_head(node *head){
+    
+    node *temp=head;
+    //edge case, if there's only one node in LL
+    if(temp->next==nullptr || temp==nullptr) {
+        delete temp;
+        return nullptr;
+    }
+    
+    head=head->next;
+    delete temp;
+
+    return head;
+}
+
+//delete tail function
+node* delete_tail(node *head){
+    node *temp=head;
+    //edge case, when LL is empty or contains only i node
+    if(head==nullptr || head->next==nullptr) return nullptr;
+    while(temp->next->next){
+        temp=temp->next;
+    }
+    delete temp->next;
+    temp->next=nullptr;
+    return head;
 }
 
 //Function to delete Kth node
@@ -103,22 +130,11 @@ node* remove_ele(node *head, int ele){
 }
 
 int main(){
-    vector<int> nums={2,3,5,3,7,9};
-    node* head= arr2ll(nums);
-    display(head);
+    vector<int> nums={3};
+    node *head=arr2ll(nums);
 
-    //remove kth node
-    int k;
-    cout<<"Node to delete: ";
-    cin>>k;
-    head=deleteNode(head,k);
     display(head);
-
-    //remove an element
-    int ele;
-    cout<<"Element to remove: ";
-    cin>>ele;
-    head=remove_ele(head,ele);
+    head=delete_head(head);
     display(head);
 
     return 0;
