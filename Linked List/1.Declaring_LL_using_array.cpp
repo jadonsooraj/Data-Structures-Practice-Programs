@@ -34,6 +34,16 @@ node* arr2ll(vector<int> &nums){
     return head;
 }
 
+//function to display LL
+void display(node* head){
+    node* temp=head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
 int main(){
     
     vector<int> nums={2,5,3,7};
@@ -48,7 +58,9 @@ int main(){
     //converting Array to LL
     node* head=  arr2ll(nums);
 
-    cout<<"Head of LL "<<head->data;
+    cout<<"Head of LL "<<head->data<<endl;
+    cout<<"LL: ";
+    display(head);
 
     return 0;
 }

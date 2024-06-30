@@ -4,6 +4,7 @@
         "regex": "cpp",
         "iostream": "cpp",
         "chrono": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "new": "cpp"
     }
 }
