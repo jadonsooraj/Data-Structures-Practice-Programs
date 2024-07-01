@@ -14,3 +14,4 @@ List of questions on LL
     (d) Insert node before 'ele'
 6. Odd Even LL
 7. Middle of a LL
+8. Reverse a LL

@@ -51,8 +51,12 @@ void display(node* head){
     cout<<endl;
 }
 
-//brute force using extra array
+//M-1 brute force using extra array, Time-O(n), space-O(n)
 node* Odd_Even_Using_Arr(node *head){
+    
+    //edge case
+    if(head==nullptr || head->next==nullptr) return head;
+
     vector<int> arr;
     node* temp=head;
 
@@ -76,8 +80,27 @@ node* Odd_Even_Using_Arr(node *head){
     head=arr2ll(arr);
     
     return head;
+}
 
+//M-2 Optimised without using extra space, Time-O(n), space-O(1)
+node* odd_even(node* head){
+    //edge case
+    if(head==nullptr || head->next==nullptr) return head;
 
+    node *odd=head;
+    node *even=head->next;
+    node *evenhead=head->next;
+
+    while(even && even->next){
+        odd->next=odd->next->next;
+        even->next=even->next->next;
+        
+        odd=odd->next;
+        even=even->next;
+    } 
+    odd->next=evenhead;
+
+    return head;
 }
 
 //main function
@@ -90,11 +113,14 @@ int main(){
     display(head);
 
     //using BruteForce
-    head=Odd_Even_Using_Arr(head);
-    cout<<"output: ";
-    display(head);
+    node *head1=Odd_Even_Using_Arr(head);
+    cout<<"Brute Force output: ";
+    display(head1);
 
-    //Without using arr
+    //Optimised
+    node *head2=odd_even(head);
+    cout<<"Optmised output: ";
+    display(head2);
 
     return 0;
 }
