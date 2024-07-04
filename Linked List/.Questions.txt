@@ -15,3 +15,6 @@ List of questions on LL
 6. Odd Even LL
 7. Middle of a LL
 8. Reverse a LL
+9. Detect loop in LL
+10. find starting point of LL
+11. find Length of Loop in LL
