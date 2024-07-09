@@ -1,6 +1,7 @@
 //given an Arr={2,5,3,7}, Declare a LL using this array
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
 //defining a LL node
