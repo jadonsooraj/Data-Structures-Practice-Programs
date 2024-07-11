@@ -5,6 +5,8 @@
         "iostream": "cpp",
         "chrono": "cpp",
         "span": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "format": "cpp",
+        "xstring": "cpp"
     }
 }
