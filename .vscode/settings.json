@@ -7,6 +7,8 @@
         "span": "cpp",
         "new": "cpp",
         "format": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xhash": "cpp",
+        "xutility": "cpp"
     }
 }
