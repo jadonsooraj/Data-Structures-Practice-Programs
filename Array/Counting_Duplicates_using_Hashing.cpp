@@ -5,7 +5,7 @@ main(){
     int N=4,P=3;
     int nums[4]={3,3,3,3};
 
-    int hash[P+1]={0};
+    int* hash = new int[P+1]{0};
 
     for(int i=0;i<N;i++){
         hash[nums[i]]++;
