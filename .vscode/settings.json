@@ -67,6 +67,8 @@
         "xloctime": "cpp",
         "xmemory": "cpp",
         "xtr1common": "cpp",
-        "xtree": "cpp"
-    }
+        "xtree": "cpp",
+        "sstream": "cpp"
+    },
+    "github.copilot.chat.scopeSelection": true
 }

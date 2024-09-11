@@ -1,29 +1,30 @@
-#include <numeric>
+#include <iostream>
 #include <vector>
-#include <algorithm> // Add this line to include the <algorithm> header
+#include <sstream>
 
-int calculateTotalXP(const std::vector<int>& A, const std::vector<int>& Bonus) {
-    int N = A.size();
-    std::vector<int> totalXP(N, 0);
+std::vector<std::string> convertSentenceToVector(const std::string& sentence) {
+    std::vector<std::string> words;
+    std::istringstream iss(sentence);
+    std::string word;
     
-    // Iterate over each soldier
-    for (int i = 0; i < N; ++i) {
-        int power = A[i];
-        int maxBonus = 0;
-        
-        // Iterate over each soldier on the right
-        for (int j = i + 1; j < N; ++j) {
-            if (A[j] % power == 0) {
-                // Calculate the maximum bonus in range [i, j]
-                maxBonus = std::max(maxBonus, Bonus[j]);
-            }
-        }
-        
-        totalXP[i] = maxBonus;
+    while (iss >> word) {
+        words.push_back(word);
     }
     
-    // Calculate the total XP
-    int total = accumulate(totalXP.begin(), totalXP.end(), 0);
+    return words;
+}
+
+int main() {
+    std::string sentence;
+    std::cout << "Enter a sentence: ";
+    std::getline(std::cin, sentence);
     
-    return total;
+    std::vector<std::string> words = convertSentenceToVector(sentence);
+    
+    std::cout << "Words in the sentence: ";
+    for (const std::string& word : words) {
+        std::cout << word << " ";
+    }
+    
+    return 0;
 }
